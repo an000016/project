@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Product</title>
+    <link rel="stylesheet" type="text/css" href="css/table%20button.css"/>
+    <link rel="stylesheet" type="text/css" href="css/nav.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cuprum" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
+    <style>
+        * {
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #EFFFD8;
+            font-family: 'Cuprum', sans-serif;
+        }
+
+        .wrapper {
+            width: 1184px;
+            height: 1200px;
+            border: 2px solid white;
+            margin: 0 auto;
+            position: relative;
+
+        }
+
+        header {
+            width: 1180px;
+            height: 200px;
+            background-color: #F18805;
+            padding: 10px
+        }
+
+        .logo_box {
+            width: 26%;
+            height: 150px;
+            background-color: #FFD507;
+            padding: 10px;
+            margin-top: 14px;
+            margin-left: 14px;
+
+        }
+
+        nav {
+            width: 1180px;
+            height: 70px;
+            background-color: #FFD507;
+            margin: 20px 0 20px 0;
+
+        }
+
+
+
+        .search {
+            width: 900px;
+            height: 50px;
+            margin: 0 auto;
+            margin-bottom: 20px;
+            background-color: #F18805;
+        }
+
+        .icon {
+            width: 40px;
+            height: 40px;
+            margin: 5px 5px 5px 10px;
+            background-color: #FFD507;
+        }
+
+        .floatleft {
+            float: left;
+        }
+
+        .dropbtn {
+            background-color: #FFD507;
+            color: white;
+            padding: 10px;
+            font-size: 17px;
+            border: none;
+            cursor: pointer;
+            margin: 6px;
+            font-family: 'Cuprum', sans-serif;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            padding: 6px 8px;
+            z-index: 1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .searchnav .search-container {
+            float: right;
+        }
+
+        .searchnav input[type=text] {
+            padding: 7px;
+            margin-top: 7px;
+            font-size: 18px;
+            border: none;
+            font-family: 'Cuprum', sans-serif;
+        }
+
+        .searchnav .search-container button {
+            float: right;
+            padding: 6px;
+            margin: 7px 10px 0 10px;
+            background: #ddd;
+            font-size: 20px;
+            border: none;
+            cursor: pointer;
+            font-family: 'Cuprum', sans-serif;
+        }
+
+        .searchnav .search-container button:hover {
+            background: #ccc;
+        }
+
+        @media screen and (max-width: 1180px) {
+            .searchnav .search-container {
+                float: none;
+            }
+
+            .searchnav input[type=text], .searchnav .search-container button {
+                float: none;
+                display: block;
+                text-align: left;
+                width: 100%;
+                margin: 0;
+                padding: 14px;
+            }
+
+            .searchnav input[type=text] {
+                border: 1px solid #ccc;
+            }
+        }
+
+
+
+
+
+
+        table.type1 {
+            border-collapse: separate;
+            width: 90%;
+            border: 2px;
+            text-align: center;
+            margin: 0 auto;
+            font-family: 'Cuprum', sans-serif;
+        }
+
+        table.type1 th {
+            height: 50px;
+            background-color: #FFD507;
+            color: white;
+            font-size: 23px;
+            font-family: 'Lobster', cursive;
+        }
+
+        table.type1 td {
+            height: 300px;
+        }
+
+        .slideshow-container {
+            width: 250px;
+            margin: 0 auto;
+        }
+
+        .prev, .next {
+            cursor: pointer;
+            top: 50%;
+            width: auto;
+            padding: 5px;
+            margin-top: -22px;
+            color: black;
+            font-weight: bold;
+            font-size: 13px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+        }
+
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .prev:hover, .next:hover {
+            background-color: #F18805;
+            opacity: 0.5;
+        }
+
+        .text {
+            color: black;
+            font-size: 17px;
+            padding: 3px 12px;
+            bottom: 8px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .space {
+            width: 100%;
+            height: 50px;
+        }
+
+        .box_01 {
+            width: 90%;
+            height: 40px;
+            padding-left: 20px;
+            padding-top: 5px;
+            margin: 0 auto;
+            font-family: 'Lobster', cursive;
+            font-size: 23px;
+            color: white;
+        }
+
+        table.type2 {
+            width: 90%;
+            height: 15px;
+            border: 2px;
+            text-align: left;
+            margin: 0 auto;
+            font-family: 'Cuprum', sans-serif;
+            padding: 10px;
+        }
+
+        footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 50px;
+            background-color: #8FC93A;
+            color: #EFFFD8;
+            text-align: center;
+            padding: 7px;
+        }
+
+    </style>
+
+
+</head>
+<body>
+<div class="wrapper">
+    <header>
+        <div class="logo_box"><a href="search%20product.html"><img src="logo.png" width="280"/></a></div>
+    </header>
+    <nav>
+        <a class="one" href="home%20bus.html"> CHECK ZIP CODE </a>
+        <a class="one" href="#"> HOW IT WORKS </a>
+        <a class="one" href="search%20product.html"> GO SHOPPING </a>
+        <a class="one" href="#"> MY ACCOUNT </a>
+        <a class="one" href="check%20out.html" target="_blank"> VIEW CART </a>
+        <a class="two" href="#"> Login </a>
+        <a class="two" href="#"> Sign Up </a>
+    </nav>
+
+    <div class="search">
+
+        <div class="icon floatleft"><img src="search_icon.png" width="100%"/></div>
+        <div class="dropdown floatleft">
+            <button class="dropbtn"> Choose Categories</button>
+            <div class="dropdown-content">
+                <a href="list%20of%20product.html"><p> Bakery </p></a>
+                <a href="list%20of%20product.html"><p> Dairy </p></a>
+                <a href="list%20of%20product.html"><p> Vegetables </p></a>
+                <a href="list%20of%20product.html"><p> Spices </p></a>
+                <a href="list%20of%20product.html"><p> Cereal </p></a>
+                <a href="list%20of%20product.html"><p> Pasta </p></a>
+                <a href="list%20of%20product.html"><p> Canned Goods </p></a>
+                <a href="list%20of%20product.html"> <p> Snacks </p></a>
+                <a href="list%20of%20product.html"><p> Condiments </p></a>
+                <a href="list%20of%20product.html"><p> Deli </p></a>
+                <a href="list%20of%20product.html"><p> Meat </p></a>
+                <a href="list%20of%20product.html"><p> Frozen </p></a>
+                <a href="list%20of%20product.html"> <p> Beverages </p></a>
+                <a href="list%20of%20product.html"><p> Baby Products </p></a>
+                <a href="list%20of%20product.html"><p> Cleaning </p></a>
+                <a href="list%20of%20product.html"> <p> Household Items </p></a>
+                <a href="list%20of%20product.html"><p> Office Supplies </p></a>
+                <a href="list%20of%20product.html"><p> Pet Supplies </p></a>
+                <a href="list%20of%20product.html"><p> Pharmacy </p></a>
+            </div>
+        </div> <!-- end of dropdown -->
+
+        <div class="searchnav">
+            <div class="search-container">
+                <input type="text" placeholder="Search Product" name="search">
+                <a href="list%20of%20product.html"><button type="submit">Check</button></a>
+            </div>
+        </div>
+
+    </div> <!-- end of search -->
+
+
+    <table class="type1">
+        <tr>
+            <th>Weekly Sales</th>
+            <th>Easy Re-Ordering Options</th>
+            <th>Delivery Next-Day</th>
+        </tr>
+        <tr>
+            <td>
+                <div class="slideshow-container">
+                <div class="mySlides fade">
+                    <img src="product image/silk_almond-01.png" width="100%"/>
+                    <div class="text">Silk Almond</div>
+                </div>
+                <div class="mySlides fade">
+                    <img src="product image/kiwi-01.png" width="100%"/>
+                    <div class="text">Kiwi</div>
+                </div>
+                <div class="mySlides fade">
+                    <img src="product image/honey_nut_cheerios-01.png" width="100%"/>
+                    <div class="text">Honey Nut Cheerios</div>
+                </div>
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                </div>
+            </td>
+            <td>
+                <img src="reorder-01.png" width="250"/>
+                <button class="table_button" style="vertical-align:middle"><span> Go to Check </span></button>
+            </td>
+            <td>
+                <img src="delivery.jpg" width="380"/>
+                <button class="table_button" style="vertical-align:middle"><span> See Time Slot </span></button>
+            </td>
+        </tr>
+    </table>
+
+    <div class="space"></div>
+
+    <div class="box_01" style="background-color: #F18805;"><P>Suggest A Product</P></div>
+
+    <table class="type2">
+        <tr>
+            <td><i class="fa fa-angle-right"></i> <a href="list%20of%20product.html"> Baby Products </a> </td>
+            <td><i class="fa fa-angle-right"></i> <a href="list%20of%20product.html"> Baking & Spices </a> </td>
+            <td><i class="fa fa-angle-right"></i> <a href="list%20of%20product.html"> Bathroom & Shower </a> </td>
+        </tr>
+        <tr>
+            <td><i class="fa fa-angle-right"></i> <a href="list%20of%20product.html"> Beverages </a> </td>
+            <td><i class="fa fa-angle-right"></i> <a href="list%20of%20product.html"> Bread & Bakery </a> </td>
+            <td><i class="fa fa-angle-right"></i> <a href="list%20of%20product.html"> Breakfast Foods </a> </td>
+        </tr>
+        <tr>
+            <td><i class="fa fa-angle-right"></i> <a href="list%20of%20product.html"> Canned Goods/Soup </a> </td>
+            <td><i class="fa fa-angle-right"></i> <a href="list%20of%20product.html"> Cereal </a> </td>
+            <td><i class="fa fa-angle-right"></i> <a href="list%20of%20product.html"> Chips & Snacks </a> </td>
+        </tr>
+        <tr>
+            <td><i class="fa fa-angle-right"></i> <a href="list%20of%20product.html"> Condiments </a> </td>
+            <td><i class="fa fa-angle-right"></i> <a href="list%20of%20product.html"> Cookies, Candy & Gum </a> </td>
+            <td><i class="fa fa-angle-right"></i> <a href="list%20of%20product.html"> Dairy </a> </td>
+        </tr>
+        <tr>
+            <td><i class="fa fa-angle-right"></i> <a href="list%20of%20product.html"> Deli & Lunch Meat </a> </td>
+            <td><i class="fa fa-angle-right"></i> <a href="list%20of%20product.html"> Event Planning & Parties </a> </td>
+            <td><i class="fa fa-angle-right"></i> <a href="list%20of%20product.html"> Frozen Entrees & Meals </a> </td>
+        </tr>
+        <tr>
+            <td><i class="fa fa-angle-right"></i> <a href="list%20of%20product.html"> Frozen Foods </a> </td>
+            <td><i class="fa fa-angle-right"></i> <a href="list%20of%20product.html"> Fruits & Vegetables </a> </td>
+            <td><i class="fa fa-angle-right"></i> <a href="list%20of%20product.html"> Ice Cream & Desserts </a> </td>
+        </tr>
+        <tr>
+            <td><i class="fa fa-angle-right"></i> <a href="list%20of%20product.html"> Kitchen & Paper Goods </a> </td>
+            <td><i class="fa fa-angle-right"></i> <a href="list%20of%20product.html"> Laundry & Cleaning </a> </td>
+            <td><i class="fa fa-angle-right"></i> <a href="list%20of%20product.html"> Meat, Chicken & Fish </a> </td>
+        </tr>
+        <tr>
+            <td><i class="fa fa-angle-right"></i> <a href="list%20of%20product.html"> Natural & Organic </a> </td>
+            <td><i class="fa fa-angle-right"></i> <a href="list%20of%20product.html"> Office Supplies </a> </td>
+            <td><i class="fa fa-angle-right"></i> <a href="list%20of%20product.html"> One-Stop for Offices </a> </td>
+        </tr>
+        <tr>
+            <td><i class="fa fa-angle-right"></i> <a href="list%20of%20product.html"> Pasta, Rice & Sauces </a> </td>
+            <td><i class="fa fa-angle-right"></i> <a href="list%20of%20product.html"> Pet Supplies </a> </td>
+            <td><i class="fa fa-angle-right"></i> <a href="list%20of%20product.html"> Pharmacy </a> </td>
+        </tr>
+
+    </table>
+
+</div> <!-- end of wrapper -->
+
+<footer>
+    <p> Use of Gopher Delivery and this Web site constitutes acceptance of our <a href=""> Terms of Use </a> and <a href=""> Privacy Policy </a>. </p>
+    <p> &copy; Copyright 2006-2018 Gopher Deliver Inc., All Right Reserved.</p>
+</footer>
+
+
+<script>
+    var slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slides[slideIndex-1].style.display = "block";
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Bus</title>
+
+    <style>
+        .wrapper {
+            width: 1184px;
+            height: 1000px;
+            border: 2px solid white;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        #myAnimation {
+            width: 1000px;
+            height: 600px;
+            position: absolute;
+        }
+
+        .bus {
+            width: 700px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .search {
+            width: 300px;
+            height: 50px;
+            top: 290px;
+            left: 82px;
+            position: absolute;
+        }
+
+        .searchnav .search-container {
+            float: right;
+        }
+
+        .searchnav input[type=text] {
+            padding: 6px;
+            margin-top: 6px;
+            font-size: 13px;
+            border: none;
+        }
+
+        .searchnav .search-container button {
+            float: right;
+            padding: 6px;
+            margin: 6px 10px 0 5px;
+            background: #ddd;
+            font-size: 13px;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .searchnav .search-container button:hover {
+            background: #ccc;
+            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+
+        }
+
+        @media screen and (max-width: 1180px) {
+            .searchnav .search-container {
+                float: none;
+            }
+
+            .searchnav input[type=text], .searchnav .search-container button {
+                float: none;
+                display: block;
+                text-align: left;
+                width: 70%;
+                margin: 0;
+                padding: 14px;
+            }
+
+            .searchnav input[type=text] {
+                border: 1px solid #ccc;
+            }
+        }
+
+        .checkbox {
+            width: 255px;
+            height: 30px;
+            top: 335px;
+            left: 135px;
+            position: relative;
+            font-family: helverica, sans-serif;
+            font-size: 13px;
+        }
+
+        p {
+            font-size: 1px;
+        }
+
+
+
+    </style>
+
+</head>
+<body>
+<div class="wrapper">
+
+    <div id="myAnimation">
+        <div class="bus">
+            <div class="search">
+                <div class="searchnav">
+                    <div class="search-container">
+                        <input type="text" placeholder="TYPE YOUR ZIP CODE!" name="search">
+                        <button type="submit" onclick="myMove()">Check Zip Code</button>
+                    </div>
+                </div>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="radio" checked="checked" name="radio">
+                    <span></span>
+                    HOME
+                </label>
+                <p></p>
+                <label>
+                    <input type="radio" checked="checked" name="radio">
+                    <span></span>
+                    BUSINESS
+                </label>
+            </div>
+            <img src="bus 3.png" width="750px"/>
+        </div>
+    </div>
+
+
+</div>
+
+<script>
+    function myMove() {
+        var elem = document.getElementById("myAnimation");
+        var pos = 0;
+        var id = setInterval(frame, 0.001);
+        function frame() {
+            if (pos == 1250) {
+                clearInterval(id);
+                window.location.href="search%20product.html";
+            } else {
+                pos++;
+                elem.style.left = pos + 'px';
+            }
+        }
+    }
+
+
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Box Model without border-boxing</title>
+    <style>
+
+        body {
+            background-color: lightpink;
+        }
+
+        div.box_01 {
+            width: 400px;
+            height: 400px;
+            background-color: orange;
+            margin: 0 auto;
+            border: solid white 5px;
+            padding: 10px;
+        }
+
+        div.box_02 {
+            box-sizing: border-box;
+            width: 400px;
+            height: 400px;
+            background-color: orange;
+            margin: 0 auto;
+            border: solid white 5px;
+            padding: 10px;
+        }
+
+        p {
+            position: absolute;
+            top: 40px;
+            left: 30px;
+
+        }
+
+
+    </style>
+
+</head>
+<body>
+
+<div class="box_01">Hi! I am an orange box with a white solid stroke. Nice to meet you!</div>
+<div class="box_02">Hi! I am an orange box with a white solid stroke. Nice to meet you!</div>
+
+<p>
+    <a href="project_10_home.html"> Go Back Home Page </a>
+</p>
+
+
+
+</body>
+</html>

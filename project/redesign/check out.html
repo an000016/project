@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Check Out</title>
+    <link rel="stylesheet" type="text/css" href="css/nav.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cuprum" rel="stylesheet">
+
+
+    <style>
+        * {
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #EFFFD8;
+            font-family: 'Cuprum', sans-serif;
+        }
+
+        .wrapper {
+            width: 1184px;
+            height: 1200px;
+            border: 2px solid white;
+            margin: 0 auto;
+            position: relative;
+
+        }
+
+        header {
+            width: 1180px;
+            height: 200px;
+            background-color: #F18805;
+            padding: 10px
+        }
+
+        .logo_box {
+            width: 26%;
+            height: 150px;
+            background-color: #FFD507;
+            padding: 10px;
+            margin-top: 14px;
+            margin-left: 14px;
+        }
+
+
+        nav {
+            width: 1180px;
+            height: 70px;
+            background-color: #FFD507;
+            margin: 20px 0 20px 0;
+
+        }
+
+
+        .box_01 {
+            width: 800px;
+            height: 50px;
+            margin: 0 auto;
+            margin-bottom: 20px;
+            background-color: tomato;
+            text-align: center;
+            font-family: 'Lobster', cursive;
+            font-size: 22px;
+            padding-top: 10px;
+            color: white;
+        }
+
+        table {
+            text-align: left;
+            border: 1px;
+            width: 80%;
+            height: 60px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        th {
+            background-color: #FFD507;
+            height: 30px;
+        }
+
+        footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 50px;
+            background-color: #8FC93A;
+            color: #EFFFD8;
+            text-align: center;
+            padding: 7px;
+        }
+
+
+    </style>
+
+
+
+</head>
+<body onload="init();">
+<div class="wrapper">
+    <header>
+        <div class="logo_box"><a href="search%20product.html"><img src="logo.png" width="280"/></a></div>
+    </header>
+    <nav>
+        <a class="one" href="home%20bus.html"> CHECK ZIP CODE </a>
+        <a class="one" href="#"> HOW IT WORKS </a>
+        <a class="one" href="search%20product.html"> GO SHOPPING </a>
+        <a class="one" href="#"> MY ACCOUNT </a>
+        <a class="one" href="check%20out.html" target="_blank"> VIEW CART </a>
+        <a class="two" href="#"> Login </a>
+        <a class="two" href="#"> Sign Up </a>
+    </nav>
+    <div class="box_01">
+        <p> MY SHOPPING CART </p>
+    </div>
+<table>
+    <tr>
+        <th>Image</th>
+        <th>Name</th>
+        <th>Weight</th>
+        <th>Count</th>
+        <th>Price</th>
+        <th>Empty Cart</th>
+    </tr>
+    <tr>
+        <th><img src="product image/silk_almond-01.png" width="80px"/></th>
+        <td> Silk Almond, Vanilla Almond Milk </td>
+        <td> 64 oz </td>
+        <td colspan="2" align="center">
+            <form name="form" method="get">
+                <input type=hidden name="sell_price" value="4.25">
+                <input type="text" name="amount" value="1" size="3" onchange="change();">
+                <input type="button" value=" + " onclick="add();"><input type="button" value=" - " onclick="del();"><br>
+                $ <input type="text" name="sum" size="11" readonly>
+            </form>
+        </td>
+        <td>REMOVE</td>
+    </tr>
+    <tr>
+        <th><img src="product image/ointment-01.png" width="80px"/></th>
+        <td> Medicated Diaper Rash Ointment </td>
+        <td> 6.0 oz </td>
+        <td> 1 </td>
+        <td> $ 5.00 </td>
+        <td>REMOVE</td>
+    </tr>
+    <tr>
+        <td colspan="6" align="right" height="35" style="background-color: #FFD507;">
+            Sub Total : $ 9.25
+        </td>
+    </tr>
+    <tr>
+        <td colspan="6" align="right" height="35">
+            Tax (8.025%) : $ 0.74
+        </td>
+    </tr>
+    <tr>
+        <td colspan="6" align="right" height="35">
+            Delivery Fee : $ 2.00
+        </td>
+    </tr>
+    <tr>
+        <td colspan="6" align="right" height="35" style="background-color: #FFD507;">
+            Total : $ 11.99
+        </td>
+    </tr>
+
+</table>
+    <a class="three" href="#" target="_blank"> CHECK OUT </a>
+    <a class="three" href="list%20of%20product.html" target="_blank"> CONTINUE SHOPPING </a>
+
+
+</div> <!-- end of wrapper -->
+<footer>
+    <p> Use of Gopher Delivery and this Web site constitutes acceptance of our <a href=""> Terms of Use </a> and <a href=""> Privacy Policy </a>. </p>
+    <p> &copy; Copyright 2006-2018 Gopher Deliver Inc., All Right Reserved.</p>
+</footer>
+
+<script>
+    <!--
+    var sell_price;
+    var amount;
+
+    function init () {
+        sell_price = document.form.sell_price.value;
+        amount = document.form.amount.value;
+        document.form.sum.value = sell_price;
+        change();
+    }
+
+    function add () {
+        hm = document.form.amount;
+        sum = document.form.sum;
+        hm.value ++ ;
+
+        sum.value = parseInt(hm.value) * sell_price;
+    }
+
+    function del () {
+        hm = document.form.amount;
+        sum = document.form.sum;
+        if (hm.value > 1) {
+            hm.value -- ;
+            sum.value = parseInt(hm.value) * sell_price;
+        }
+    }
+
+    function change () {
+        hm = document.form.amount;
+        sum = document.form.sum;
+
+        if (hm.value < 0) {
+            hm.value = 0;
+        }
+        sum.value = parseInt(hm.value) * sell_price;
+    }
+    //-->
+</script>
+
+</body>
+</html>
